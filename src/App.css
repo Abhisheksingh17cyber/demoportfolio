@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0A2647;
+  --secondary-color: #144272;
+  --accent-color: #205295;
+  --gold-color: #D4AF37;
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+  --bg-light: #f8f9fa;
+  --bg-dark: #0f1419;
+  --gradient-1: linear-gradient(135deg, #0A2647 0%, #144272 50%, #205295 100%);
+  --gradient-2: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+  --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-2: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  overflow-x: hidden;
+}
+
+.App {
+  position: relative;
+}
+
+/* Loader Styles */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--gradient-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.loader {
+  text-align: center;
+}
+
+.emblem {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  background: radial-gradient(circle, var(--gold-color) 0%, #B8860B 100%);
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.emblem::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.emblem::after {
+  content: '⚖';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: var(--gold-color);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.loader p {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section Styles */
+section {
+  padding: 80px 20px;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.divider {
+  width: 100px;
+  height: 4px;
+  background: var(--gradient-2);
+  margin: 0 auto 1rem;
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gradient-1);
+  color: var(--text-light);
+  box-shadow: var(--shadow-1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--gold-color);
+}
+
+.btn-secondary:hover {
+  background: var(--gold-color);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* Emblem Small */
+.emblem-small {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, var(--gold-color) 0%, #B8860B 100%);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.emblem-small::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.emblem-small::after {
+  content: '⚖';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: var(--gold-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 15px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+}

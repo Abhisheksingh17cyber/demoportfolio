@@ -1,0 +1,128 @@
+.footer {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1.5rem;
+  color: var(--gold-color);
+  font-weight: 700;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--gold-color);
+  color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-section ul li a:hover {
+  opacity: 1;
+  color: var(--gold-color);
+  transform: translateX(5px);
+}
+
+.contact-item {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.contact-item svg {
+  color: var(--gold-color);
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.footer-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-color) 50%, transparent 100%);
+  margin-bottom: 2rem;
+  opacity: 0.3;
+}
+
+.footer-bottom {
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
