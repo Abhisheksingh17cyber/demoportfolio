@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// Vercel-specific configuration with clean URLs
 export default defineConfig({
   plugins: [react()],
-  base: '/demoportfolio/', // GitHub Pages base path
+  base: '/', // Vercel uses root path
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
