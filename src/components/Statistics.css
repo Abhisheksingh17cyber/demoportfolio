@@ -1,0 +1,128 @@
+.statistics {
+  background: linear-gradient(135deg, rgba(10, 38, 71, 0.02) 0%, rgba(32, 82, 149, 0.02) 100%);
+  padding: 80px 20px;
+}
+
+.category-filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 12px 30px;
+  background: white;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.filter-btn.active {
+  background: var(--gradient-1);
+  color: var(--text-light);
+  border-color: transparent;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--accent-color, var(--gold-color));
+}
+
+.stat-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.stat-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.stat-card p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.stat-glow {
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.1;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.stat-card:hover .stat-glow {
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-filter {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+}
