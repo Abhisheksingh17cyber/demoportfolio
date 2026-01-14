@@ -8,15 +8,6 @@ const GunAnimation = () => {
   const [accuracy, setAccuracy] = useState(0);
   const [autoMode, setAutoMode] = useState(true);
 
-  useEffect(() => {
-    if (autoMode) {
-      const interval = setInterval(() => {
-        handleShoot();
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [autoMode, bulletsFired]);
-
   const handleShoot = () => {
     setIsShooting(true);
     setBulletsFired(prev => prev + 1);
@@ -28,6 +19,15 @@ const GunAnimation = () => {
       setIsShooting(false);
     }, 500);
   };
+
+  useEffect(() => {
+    if (autoMode) {
+      const interval = setInterval(() => {
+        handleShoot();
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [autoMode, bulletsFired]);
 
   const resetStats = () => {
     setBulletsFired(0);
