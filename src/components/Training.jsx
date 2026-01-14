@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaHorse, FaBullseye, FaRunning, FaMountain, FaShieldAlt, FaBook, FaUsers, FaLaptop, FaHandshake } from 'react-icons/fa';
+import GunAnimation from './GunAnimation';
 import './Training.css';
 
 const Training = () => {
@@ -158,6 +159,16 @@ const Training = () => {
             <h3>🌐 Exposure</h3>
             <p className="highlight">National & International</p>
           </div>
+        </motion.div>
+
+        {/* Animated Gun Component */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <GunAnimation />
         </motion.div>
 
         {/* Training Phases */}
