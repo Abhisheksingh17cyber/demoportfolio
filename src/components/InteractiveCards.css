@@ -1,0 +1,165 @@
+.interactive-cards-section {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-cards-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.interactive-cards-section .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.interactive-cards-section .section-header h2 {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.interactive-cards-section .section-header p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.interactive-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  perspective: 1000px;
+  position: relative;
+  z-index: 1;
+}
+
+.interactive-card-wrapper {
+  perspective: 1000px;
+}
+
+.interactive-card {
+  position: relative;
+  padding: 50px 35px;
+  border-radius: 20px;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.interactive-card:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 
+    0 30px 80px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%);
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 200%;
+  }
+}
+
+.card-icon {
+  font-size: 64px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.5));
+  transform: translateZ(50px);
+}
+
+.interactive-card h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: translateZ(30px);
+}
+
+.interactive-card p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  transform: translateZ(20px);
+}
+
+.card-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .interactive-cards-section {
+    padding: 80px 0;
+  }
+
+  .interactive-cards-section .section-header h2 {
+    font-size: 36px;
+  }
+
+  .interactive-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .interactive-card {
+    padding: 40px 30px;
+  }
+
+  .card-icon {
+    font-size: 52px;
+  }
+
+  .interactive-card h3 {
+    font-size: 24px;
+  }
+}

@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import MouseFollower from './components/MouseFollower';
+import FloatingMenu from './components/FloatingMenu';
 import ParticlesBackground from './components/ParticlesBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import InteractiveCards from './components/InteractiveCards';
 import Expertise from './components/Expertise';
 import ExamPreparation from './components/ExamPreparation';
 import Training from './components/Training';
@@ -41,10 +44,13 @@ function App() {
 
   return (
     <div className="App">
+      <MouseFollower />
+      <FloatingMenu />
       <ParticlesBackground />
       <Navbar />
       <Hero />
       <About />
+      <InteractiveCards />
       <Expertise />
       <ExamPreparation />
       <Training />
